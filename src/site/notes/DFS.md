@@ -4,6 +4,10 @@
 
 # [[Graph\|Graph]]
 ## Recursive
+
+>[!Important]
+>When using DFS to search from multiple starting points, the visited array should be reset for each unique path we are testing
+
 ```python
 # graph - dict{int: list(int)}
 # visited - set(int)
@@ -20,6 +24,7 @@ def dfs(node: int) -> None:
 	return
 ```
 ## Iterative
+
 ```python
 def dfs(graph: dict, root: int) -> None:
 	stack: list(int) = [root]
@@ -37,7 +42,9 @@ def dfs(graph: dict, root: int) -> None:
 	return
 ```
 # [[Tree\|Tree]]
+
 ## Recursive
+
 ```python
 # graph - dict{int: list(int)}
 
@@ -50,7 +57,9 @@ def dfs(root: int) -> None:
 
 	return
 ```
+
 ## Iterative
+
 ```python
 def dfs(graph: dict, root: int) -> None:
 	stack: list(int) = [root]
@@ -64,7 +73,9 @@ def dfs(graph: dict, root: int) -> None:
 
 	return
 ```
+
 # [[Binary Tree\|Binary Tree]]
+
 ## Recursive
 ```python
 class Node:
@@ -83,7 +94,9 @@ def dfs(root: Node | None) -> None:
 
 	return
 ```
+
 ## Iterative
+
 ```python
 class Node:
 	def __init__(self, val: int):
@@ -104,8 +117,11 @@ def dfs(root: Node) -> None:
 
 	return
 ```
+
 # [[Binary Search Tree\|Binary Search Tree]]
+
 ## Recursive
+
 ```python
 class Node:
 	def __init__(self, val: int):
@@ -143,7 +159,9 @@ def dfsPostorder(root: Node | None) -> None:
 
 	return
 ```
+
 ## Iterative
+
 ```python
 class Node:
 	def __init__(self, val: int):

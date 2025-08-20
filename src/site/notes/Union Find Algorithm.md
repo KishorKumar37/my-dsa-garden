@@ -23,3 +23,41 @@ class UnionFind:
 
 		return False
 ```
+
+```cpp
+class DisjointSet {
+private:
+    vector<int> parent;
+    int redundantEdges;
+    int islands;
+public:
+    DisjointSet(int size) {
+        parent.resize(size);
+        for (int i = 0; i < size; i++) {
+            parent[i] = i;
+        }
+        islands = size;
+        redundantEdges = 0;
+    }
+    int find(int key) {
+        if (parent.at(key) == key) return key;
+        return parent[key] = find(parent.at(key));
+    }
+    void unite(int key1, int key2) {
+        int parent1 = find(key1);
+        int parent2 = find(key2);
+
+        if (parent1 == parent2) redundantEdges++;
+        else {
+            parent[parent1] = parent2;
+            islands--;
+        }
+    }
+    int getIslands() {
+        return islands;
+    }
+    int getRedundantEdges() {
+        return redundantEdges;
+    }
+};
+```
